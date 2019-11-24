@@ -51,17 +51,16 @@ function hello(name) {
 hello('javascript');
 
 /** */
-/** 함수 표현식, 함수 선언식 */
-
+/** 함수 표현식과 함수 선언식 */
 // 실행 전
 logMessage();
 sumNumbers();
 
-function logMessage() { // 함수 선언식
+function logMessage() {
   return 'worked';
 }
 
-var sumNumbers = function () { // 함수 표현식
+var sumNumbers = function () {
   return 10 + 20;
 };
 
