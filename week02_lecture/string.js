@@ -110,3 +110,7 @@ console.log(sample8.concat(newWord));
 
 var sample9 = "Hello World";
 console.log(sample9.length)
+
+for(i=1; i < sample9.length; i++) {
+  console.log(i);
+}

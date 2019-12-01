@@ -15,6 +15,7 @@ var decrease = function (num) {
 }
 
 var predicate_array = [increase, decrease];
+// var predicate_array = [function(){return ++num;}, function(){return --num;}]
 
 console.log(increase(1)); //2
 console.log(decrease(1)); //0
@@ -34,8 +35,23 @@ function makeCounter(predicate) {
 }
 
 var increaser = makeCounter(predicates.increase);
+// var increaser = function () {
+//   num = predicate(num);
+//   return num;
+// }
+
+console.log(increase(0));
+console.log(increase(0));
+console.log(increase(0));
+console.log(increase(0));
+console.log(increase(0));
+
 console.log(increaser()); // 1
 console.log(increaser()); // 2
+console.log(increaser());
+console.log(increaser());
+console.log(increaser());
+console.log(increaser());
 
 var decreaser = makeCounter(predicates.decrease);
 console.log(decreaser()); // -1
@@ -46,6 +62,7 @@ function hello(name) {
   return console.log('hello ' + name); // 여기까지만 실행.
 
   console.log('hi'); // 실행되지 않음.
+
 }
 
 hello('javascript');
@@ -54,7 +71,7 @@ hello('javascript');
 /** 함수 표현식과 함수 선언식 */
 // 실행 전
 logMessage();
-sumNumbers();
+// sumNumbers();
 
 function logMessage() {
   return 'worked';

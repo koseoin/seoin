@@ -19,12 +19,21 @@ $('.root');
  */
 document.querySelector('.product').dataset.productId; // 'G123'
 console.log($('.product').data('product-id'));
+// $('#app').click(function ()
+// {text($(".product").data('product-id')}
+// $(document).ready(function(){
+//     $('#app').click(function(){
+//         // $('#app').text($(".product").data('product-id'));
+//         $(this).text($(".product").data('product-id'));
+//     });
+// });
 
 /** 
  * 문자열 변경
  */
-document.querySelector('#foo').innerHTML = 'Hello Chris';
-$('#foo').text('Hello Chris');
+document.querySelector('#foo').innerHTML = 'Hello Chris'; //javascript
+
+$('#foo').text('Hello Chris'); // jquery
 
 /** 
  * 이벤트 처리
