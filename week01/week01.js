@@ -4,29 +4,42 @@ $(document).ready(function () {
       $(".con_qz_1").show();
     })
     $(".btn_next").click(function (){
-      var number = $(this).parent().parent().attr('class').split("qz_")[1];
-           $('.con_qz_' + number).hide();
-          $('.con_qz_' + ++number).show(); 
-           console.log(number); 
-           })
-      // $(".quiz_btn").click(function (){
-      //   $(".con_qz_2").hide();
-      //   $(".con_qz_3").show();
-      // })
-      // $(".quiz_btn").click(function (){
-      //   $(".con_qz_3").hide();
-      //   $(".con_qz_4").show();
-      // })
-    //   $(".con_qz_2").show();
-    //   $(".con_qz_2").hide();
-    //   $(".con_qz_3").show();
-    //   $(".con_qz_3").hide();
-    //   $(".con_qz_4").show();
-    //   $(".con_qz_4").hide();
-    //   $(".con_qz_5").show();
-    //   $(".con_qz_5").hide();
-    //   $(".con_qz_6").show();
-    //   $(".con_qz_6").hide();
-    //   $(".con_qz_7").hide();
-    //   $(".con_qz_7").hide();
-    })
+      // var number = $(this).parent().parent().attr('class').split("qz_")[1];
+      var number = $(this).parent().parent().attr('class').split("_")[2]; // this가 포인트!!
+
+
+      if (!$("input:radio").is(":checked")) {
+        alert('체크해주세요');
+        return;
+      }
+      console.log(number);
+          $('.con_qz_' + number).hide();
+          $('.con_qz_' + ++number).show();
+      // }
+           // 중요!!
+    // $(".btn_next").click(callback함수);
+    // callback함수는 내가 실행하는게 아니고 javascript나 다른 함수가 실행시키는 함수가
+    // 함수의 형태만 만들어서 넘겨주면 실행이 나중에 됨
+    // 내가 실행실행하는거는 => myFun(); 
+    
+
+    // console.log("input:radio").is(":checked");
+    });
+    $(".answer_check").click(function(){
+      var no = $(this).data("no");
+      console.log(no);
+      $(".show_seq").text(no);
+    });
+
+    $(".mr5.btn_prev").click(function(){
+      var num = $(this).parent().parent().attr('class').split("_")[2]; 
+      console.log(num);
+        $('.con_qz_' + num).hide();
+        $('.con_qz_' + --num).show();
+    }); 
+
+      console.log($(".qz3_ck1 > input:radio[value=1]").is(":checked"));
+      $(".qz3_ck2 > input:radio[value=2]").is(":checked");
+      $(".qz3_ck3 > input:radio[value=3]").is(":checked");
+
+});
