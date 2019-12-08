@@ -44,6 +44,9 @@ $(document).ready(function () {
         textVal = textVal + $('.con_qz_6 .seq_area li').eq(e-1).text();
       });
       $(".show_seq").text(textVal);
+
+      console.log('1111');
+
     });
       
     $(".mr5.btn_prev").click(function(){
