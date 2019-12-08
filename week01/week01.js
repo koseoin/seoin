@@ -6,12 +6,11 @@ $(document).ready(function () {
     $(".btn_next").click(function (){
       // var number = $(this).parent().parent().attr('class').split("qz_")[1];
       var number = $(this).parent().parent().attr('class').split("_")[2]; // this가 포인트!!
-
-
-      if (!$("input:radio").is(":checked")) {
-        alert('체크해주세요');
-        return;
-      }
+      
+      // if (!$("input:radio[name=qz"+number+"]").is(":checked")){
+      //   alert('체크해주세요');
+      //   return;
+      // }
       console.log(number);
           $('.con_qz_' + number).hide();
           $('.con_qz_' + ++number).show();
@@ -27,8 +26,9 @@ $(document).ready(function () {
     });
     $(".answer_check").click(function(){
       var no = $(this).data("no");
+      var txt = $(this).text();
       console.log(no);
-      $(".show_seq").text(no);
+      $(".show_seq").text(txt);
     });
 
     $(".mr5.btn_prev").click(function(){
