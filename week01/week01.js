@@ -1,4 +1,5 @@
 $(document).ready(function () {
+     var textnm=[];
     $('#btn_quiz_start').click(function (){
       $('#quiz_start').hide();
       $(".con_qz_1").show();
@@ -26,11 +27,25 @@ $(document).ready(function () {
     });
     $(".answer_check").click(function(){
       var no = $(this).data("no");
-      var txt = $(this).text();
-      console.log(no);
-      $(".show_seq").text(txt);
+      $(this).parent().toggleClass('on');
+     
+      if($(this).parent().hasClass('on')){
+      textnm.push(no);
+     }else{
+      var dele =textnm.indexOf(no);
+      textnm.splice(dele,1);
+     };
+      console.log(textnm);
+      var textVal = "";
+      textnm.forEach(function(e){
+        
+        // console.log(e);
+        console.log($('.con_qz_6 .seq_area li').eq(e-1).text());
+        textVal = textVal + $('.con_qz_6 .seq_area li').eq(e-1).text();
+      });
+      $(".show_seq").text(textVal);
     });
-
+      
     $(".mr5.btn_prev").click(function(){
       var num = $(this).parent().parent().attr('class').split("_")[2]; 
       console.log(num);
